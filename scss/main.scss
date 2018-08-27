@@ -1,0 +1,21 @@
+/* Browser does not read scss so we have to compile them to regular css */
+/* Install npm install node - sass */
+
+/* Steps
+ * npm init
+ * npm install node-sass (node i node-sass) is the pretty much same thing
+ */
+
+//Hint to clear terminal ctrl + l is enough :)
+
+/* To run sass use npm run sass, it will go to the package.json -> scripts: sass
+ * sass: "node-sass -w scss/ -o dist/css/ --recursive"
+ * -w = watch scss file and / -o = put the compiled css to the dist/css/ --recursive means do this operations recursive manner
+*/
+
+$primary-color: #444;
+
+body {
+  background: $primary-color;
+  color: #fff;
+}
