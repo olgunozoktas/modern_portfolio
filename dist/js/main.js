@@ -4,8 +4,10 @@ const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(
-  ".nav-items"
+  ".nav-item"
 ); /* Links Home, About Me, My Work, How To Reach Me */
+
+console.log(navItems);
 
 //Set Initial State Of Menu
 let showMenu = false;
