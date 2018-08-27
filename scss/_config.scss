@@ -1,0 +1,37 @@
+$primary-color: #444;
+$secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.9;
+
+/* Is like a function */
+@mixin easeOut {
+  transition: all 0.5s ease-out; /* transition: (what you want to transite?), (second), (what do want to do)? */
+}
+
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover; /* Cover the entire space */
+
+      /* Instead of .overlay element we could write &:after {
+          content: '',
+          .....
+      }
+      and this makes the same effect as well because it will put an empty element after the #bg-img which has those feature
+      */
+
+      .overlay {
+        position: absolute; /* Cover the all body */
+        top: 0; /* Start from the top 0 */
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* because we want the text to pushed up to the top */
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}

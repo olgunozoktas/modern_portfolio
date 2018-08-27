@@ -8,6 +8,90 @@
  * sass: "node-sass -w scss/ -o dist/css/ --recursive"
  * -w = watch scss file and / -o = put the compiled css to the dist/css/ --recursive means do this operations recursive manner
 */
+/* _config.scss is a partial that means we can put our variables and functions(mixins) in it */
+/* to call this file we have just write its name */
+/* Is like a function */
+* {
+  box-sizing: border-box;
+  /* does not affect height and weight, just in the box */ }
+
 body {
   background: #444;
-  color: #fff; }
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body#bg-img {
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    /* Cover the entire space */
+    /* Instead of .overlay element we could write &:after {
+          content: '',
+          .....
+      }
+      and this makes the same effect as well because it will put an empty element after the #bg-img which has those feature
+      */ }
+    body#bg-img .overlay {
+      position: absolute;
+      /* Cover the all body */
+      top: 0;
+      /* Start from the top 0 */
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      /* because we want the text to pushed up to the top */
+      background: rgba(68, 68, 68, 0.9); }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  /* To make it more thin or bold */ }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 6rem;
+    /* rem means 16 * 6 */ }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(73, 73, 73, 0.5);
+    /* first parameter original color, how much want to make it lighther */ }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  /* header will always in the top -> menu button */
+  z-index: 2;
+  /* how an element is close to you -> make it on the other element */
+  width: 100%; }
+
+.text-secondary {
+  color: #eece1a; }
+
+main {
+  padding: 4rem;
+  height: 100%; }
+  main .icons {
+    margin-top: 1rem; }
+  main a {
+    padding: 0.4rem; }
+    main a:hover {
+      color: #eece1a;
+      transition: all 0.5s ease-out;
+      /* transition: (what you want to transite?), (second), (what do want to do)? */ }
+  main#home {
+    overflow: hidden;
+    /* not have scrollbar */ }
+    main#home h1 {
+      margin-top: 20vh;
+      /* view port height, you can think that page has 100 different slides about height and this will take 20 of them*/ }
